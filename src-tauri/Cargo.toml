@@ -1,0 +1,25 @@
+[package]
+name = "WindowsCleaner"
+version = "0.0.1"
+description = "WindowsCleaner"
+authors = ["Bamboooz"]
+license = "BSD-3-Clause"
+repository = "https://github.com/Bamboooz/WindowsCleaner"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "1.4", features = [] }
+
+[dependencies]
+tauri = { version = "1.4", features = [ "clipboard-write-text"] }
+dark-light = "1.1.1"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+
+[profile.release]
+opt-level = "z"
+strip = true 
+lto = true
+codegen-units = 1
+panic = "abort"

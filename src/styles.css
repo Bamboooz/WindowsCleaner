@@ -1,0 +1,43 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+[data-theme="light"] {
+    --primary: #f0f0f0;
+    --secondary: #e0e0e0;
+    --tertiary: #d0d0d0;
+    --border: #c0c0c0;
+    --accent: #087cd5;
+    --accent-hover: #0980e5;
+    --text-primary: #2b2b2b;
+    --text-secondary: #8c8c8c;
+}
+  
+[data-theme="dark"] {
+    --primary: #252525;
+    --secondary: #2A2A2A;
+    --tertiary: #373737;
+    --border: #202020;
+    --accent: #087cd5;
+    --accent-hover: #0980e5;
+    --text-primary: #d4d4d4;
+    --text-secondary: #737373;
+}
+
+@layer base {
+    * {
+        user-select: none;
+    }
+
+    ::-webkit-scrollbar {
+        @apply w-1 h-1;
+    }
+    
+    ::-webkit-scrollbar-thumb {
+        @apply bg-tertiary rounded-md;
+    }
+    
+    ::-webkit-scrollbar-track {
+        @apply bg-transparent;
+    }
+}
