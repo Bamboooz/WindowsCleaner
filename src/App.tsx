@@ -11,8 +11,8 @@ const commandsMap = {
     "Clean downloads folder": "del /q /f /s %USERPROFILE%\\Downloads\\*",
     "Clean system temp folder": "del /q /f /s %systemdrive%\\Windows\\Temp\\*",
     "Clean application temp folder": "del /q /f /s %TEMP%\\*",
-    "Run system file checker": "start cmd /k sfc /scannow",
-    "Schedule disk checking utility after next reboot": "start cmd /k chkdsk C: /F /R /X",
+    "Run system file checker": "sfc /scannow",
+    "Schedule disk checking utility after next reboot": "chkdsk C: /F /R /X",
 };
 
 const App: React.FC = () => {
