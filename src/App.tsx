@@ -22,14 +22,12 @@ const App: React.FC = () => {
 
     const copyCommand = async () => await writeText(getCommand());
 
+    const execute = async () => await invoke("execute_command", { command: getCommand() });
+
     const change = (command: string) => {
         setCommands(prev => prev.includes(command) 
             ? prev.filter(c => c !== command) 
             : [...prev, command]);
-    };
-
-    const execute = async () => {
-        await invoke("execute_command", { command: getCommand() });
     };
 
     return (
